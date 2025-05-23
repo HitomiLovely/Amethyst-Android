@@ -76,10 +76,10 @@ public class MinecraftDownloader {
         } */
 
         sExecutorService.execute(() -> {
-            try {
+            /* try {
                 if(isLocalProfile){
                     throw new RuntimeException("Download failed. Please make sure you are logged in with a Microsoft Account.");
-                }
+                } */
                 downloadGame(activity, version, realVersion);
                 listener.onDownloadDone();
             }catch (UnknownHostException e){
