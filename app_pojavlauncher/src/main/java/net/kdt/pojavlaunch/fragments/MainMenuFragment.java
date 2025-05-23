@@ -64,15 +64,15 @@ public class MainMenuFragment extends Fragment {
 
         mShareLogsButton.setOnClickListener((v) -> shareLog(requireContext()));
 
-        mOpenDirectoryButton.setOnClickListener((v)-> {
-            Tools.switchDemo(Tools.isDemoProfile(v.getContext())); // avoid switching accounts being able to access
+        mOpenDirectoryButton.setOnClickListener((v)-> openPath(v.getContext(), getCurrentProfileDirectory(), false));
+            /* Tools.switchDemo(Tools.isDemoProfile(v.getContext())); // avoid switching accounts being able to access
             if(Tools.isDemoProfile(v.getContext())){
                 Toast.makeText(v.getContext(), R.string.toast_not_available_demo, Toast.LENGTH_LONG).show();
                 return;
             }
 
             openPath(v.getContext(), getCurrentProfileDirectory(), false);
-        });
+        }); */
 
 
         mNewsButton.setOnLongClickListener((v)->{
