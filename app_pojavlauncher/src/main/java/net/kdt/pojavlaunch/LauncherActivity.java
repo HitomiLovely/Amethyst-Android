@@ -43,13 +43,13 @@ import net.kdt.pojavlaunch.services.ProgressServiceKeeper;
 import net.kdt.pojavlaunch.tasks.AsyncMinecraftDownloader;
 import net.kdt.pojavlaunch.tasks.AsyncVersionList;
 import net.kdt.pojavlaunch.tasks.MinecraftDownloader;
-import net.kdt.pojavlaunch.utils.DateUtils;
+/* import net.kdt.pojavlaunch.utils.DateUtils; */
 import net.kdt.pojavlaunch.utils.NotificationUtils;
 import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
 import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
 
 import java.lang.ref.WeakReference;
-import java.text.ParseException;
+/* import java.text.ParseException; */
 
 public class LauncherActivity extends BaseActivity {
     public static final String SETTING_FRAGMENT_TAG = "SETTINGS_FRAGMENT";
@@ -128,7 +128,7 @@ public class LauncherActivity extends BaseActivity {
         String normalizedVersionId = AsyncMinecraftDownloader.normalizeVersionId(prof.lastVersionId);
         JMinecraftVersionList.Version mcVersion = AsyncMinecraftDownloader.getListedVersion(normalizedVersionId);
 
-        // Do not load when is a modded version or older than minecraft 1.3 on demo account
+        /* Do not load when is a modded version or older than minecraft 1.3 on demo account
         if (mAccountSpinner.getSelectedAccount().isDemo()) {
             boolean isOlderThan13 = true;
 
@@ -151,7 +151,7 @@ public class LauncherActivity extends BaseActivity {
                 new ContextAwareDoneListener(this, normalizedVersionId)
         );
         return false;
-    };
+    }; */
 
     private final TaskCountListener mDoubleLaunchPreventionListener = taskCount -> {
         // Hide the notification that starts the game if there are tasks executing.
