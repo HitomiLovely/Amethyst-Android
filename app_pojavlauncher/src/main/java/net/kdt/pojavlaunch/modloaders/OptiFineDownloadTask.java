@@ -1,6 +1,6 @@
 package net.kdt.pojavlaunch.modloaders;
 
-import android.app.Activity;
+/* import android.app.Activity; */
 
 import com.kdt.mcgui.ProgressLayout;
 
@@ -24,13 +24,13 @@ public class OptiFineDownloadTask implements Runnable, Tools.DownloaderFeedback,
     private final ModloaderDownloadListener mListener;
     private final Object mMinecraftDownloadLock = new Object();
     private Throwable mDownloaderThrowable;
-    private final Activity activity;
+    /* private final Activity activity; */
 
-    public OptiFineDownloadTask(OptiFineUtils.OptiFineVersion mOptiFineVersion, ModloaderDownloadListener mListener, Activity activity) {
+    public OptiFineDownloadTask(OptiFineUtils.OptiFineVersion mOptiFineVersion, ModloaderDownloadListener mListener) {
         this.mOptiFineVersion = mOptiFineVersion;
         this.mDestinationFile = new File(Tools.DIR_CACHE, "optifine-installer.jar");
         this.mListener = mListener;
-        this.activity = activity;
+        /* this.activity = activity; */
     }
 
     @Override
@@ -93,7 +93,7 @@ public class OptiFineDownloadTask implements Runnable, Tools.DownloaderFeedback,
         if(minecraftJsonVersion == null) return false;
         try {
             synchronized (mMinecraftDownloadLock) {
-                new MinecraftDownloader().start(activity, minecraftJsonVersion, minecraftVersion, this);
+                new MinecraftDownloader().start(null, minecraftJsonVersion, minecraftVersion, this);
                 mMinecraftDownloadLock.wait();
             }
         }catch (InterruptedException e) {
