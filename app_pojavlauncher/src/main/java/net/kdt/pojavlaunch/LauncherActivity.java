@@ -142,7 +142,7 @@ public class LauncherActivity extends BaseActivity {
                 Toast.makeText(this, R.string.toast_not_available_demo, Toast.LENGTH_LONG).show();
                 return false;
             }
-        }
+        } */
 
         new MinecraftDownloader().start(
                 this,
@@ -151,7 +151,7 @@ public class LauncherActivity extends BaseActivity {
                 new ContextAwareDoneListener(this, normalizedVersionId)
         );
         return false;
-    }; */
+    };
 
     private final TaskCountListener mDoubleLaunchPreventionListener = taskCount -> {
         // Hide the notification that starts the game if there are tasks executing.
