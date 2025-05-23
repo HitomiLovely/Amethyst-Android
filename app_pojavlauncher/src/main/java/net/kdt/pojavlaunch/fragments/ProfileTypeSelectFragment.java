@@ -39,7 +39,6 @@ public class ProfileTypeSelectFragment extends Fragment {
                 Tools.swapFragment(requireActivity(), QuiltInstallFragment.class, QuiltInstallFragment.TAG, null));
         view.findViewById(R.id.modded_profile_bta).setOnClickListener((v)->
                 Tools.swapFragment(requireActivity(), BTAInstallFragment.class, BTAInstallFragment.TAG, null));
-    }
 
     /* private void tryInstall(Class<? extends Fragment> fragmentClass, String tag){
         if(Tools.isLocalProfile(requireContext()) || Tools.isDemoProfile(requireContext())){
